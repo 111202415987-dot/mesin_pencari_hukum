@@ -7,3 +7,5 @@ Sastrawi>=1.0.1
 sentence-transformers>=2.7
 faiss-cpu>=1.8
 chromadb>=0.5
+google-genai>=1.0
+groq>=0.9
