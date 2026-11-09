@@ -17,7 +17,7 @@ CSS = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500&display=swap');
 :root{
-  --bg:#07090f; --s1:#0e1220; --s2:#151a2c; --bd:#232a40; --tx:#E8EAF2; --mut:#8B93AD;
+  --bg:#07090f; --s1:#0e1220; --s2:#151a2c; --bd:#232a40; --tx:#F5F7FC; --mut:#C3CAE0;
   --ac:#E5484D; --ac2:#F5B971; --ok:#3DD68C; --warn:#F5B971; --bad:#FF6369;
 }
 html, body, [class*="css"], .stApp { font-family:'Inter',system-ui,sans-serif; color:var(--tx); }
@@ -47,7 +47,7 @@ h1,h2,h3{ letter-spacing:-.01em; }
 .hero h1{ font-family:'Fraunces',serif; font-size:2.25rem; line-height:1.1; margin:.8rem 0 .4rem; color:#fff; }
 .hero h1 em{ font-style:normal; background:linear-gradient(90deg,#FF7A7F,#F5B971); -webkit-background-clip:text;
   background-clip:text; color:transparent; }
-.hero p{ color:#B9C0D8; max-width:720px; margin:0 0 1rem; font-size:1rem; }
+.hero p{ color:#E1E6F5; max-width:720px; margin:0 0 1rem; font-size:1rem; }
 .stats{ display:flex; gap:.7rem; flex-wrap:wrap; }
 .stat{ background:rgba(7,9,15,.55); border:1px solid var(--bd); border-radius:12px; padding:.55rem .95rem; min-width:112px; }
 .stat b{ display:block; font-size:1.25rem; color:#fff; font-variant-numeric:tabular-nums; }
@@ -58,7 +58,7 @@ h1,h2,h3{ letter-spacing:-.01em; }
 .step{ display:flex; align-items:center; gap:.55rem; background:var(--s1); border:1px solid var(--bd);
   border-radius:12px; padding:.45rem .8rem; font-size:.82rem; transition:.2s; }
 .step:hover{ border-color:#3a4366; transform:translateY(-1px); }
-.dot{ width:9px; height:9px; border-radius:50%; background:#444b66; flex:none; }
+.dot{ width:9px; height:9px; border-radius:50%; background:#6b7494; flex:none; }
 .step.done .dot{ background:var(--ok); animation:pulse 2.2s infinite; }
 .step.warn .dot{ background:var(--warn); }
 .step small{ color:var(--mut); display:block; font-size:.7rem; }
@@ -75,7 +75,7 @@ h1,h2,h3{ letter-spacing:-.01em; }
 .rank{ font-family:'JetBrains Mono',monospace; color:var(--ac2); font-size:.8rem; }
 .rc-title{ font-weight:650; font-size:1.02rem; color:#fff; margin:.1rem 0 .25rem; }
 .chips{ display:flex; gap:.35rem; flex-wrap:wrap; margin:.2rem 0 .5rem; }
-.chip{ font-size:.72rem; padding:.12rem .6rem; border-radius:99px; background:var(--s2); border:1px solid var(--bd); color:#C9CFE6; }
+.chip{ font-size:.72rem; padding:.12rem .6rem; border-radius:99px; background:var(--s2); border:1px solid var(--bd); color:#EEF1FA; }
 .chip.ac{ background:rgba(229,72,77,.14); border-color:rgba(229,72,77,.4); color:#FFB3B6; }
 .chip.ok{ background:rgba(61,214,140,.12); border-color:rgba(61,214,140,.4); color:#8CF0BE; }
 .chip.warn{ background:rgba(245,185,113,.12); border-color:rgba(245,185,113,.4); color:#F7CC9A; }
@@ -84,7 +84,7 @@ h1,h2,h3{ letter-spacing:-.01em; }
 .score b{ font-family:'JetBrains Mono',monospace; font-size:.85rem; color:#fff; }
 .bar{ height:6px; background:var(--s2); border-radius:99px; overflow:hidden; margin-top:.3rem; }
 .bar > i{ display:block; height:100%; border-radius:99px; background:linear-gradient(90deg,var(--ac),var(--ac2)); }
-.snip{ font-size:.92rem; line-height:1.6; color:#CBD1E8; }
+.snip{ font-size:.92rem; line-height:1.6; color:#E6EAF7; }
 mark{ background:rgba(245,185,113,.28); color:#FFE2BD; padding:0 3px; border-radius:4px; }
 .cite{ display:inline-block; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:600; padding:0 .45rem;
   margin:0 .1rem; border-radius:6px; background:rgba(229,72,77,.18); border:1px solid rgba(229,72,77,.5); color:#FFB3B6; }
@@ -96,7 +96,7 @@ mark{ background:rgba(245,185,113,.28); color:#FFE2BD; padding:0 3px; border-rad
   background:conic-gradient(var(--c,#3DD68C) calc(var(--p)*1%), var(--s2) 0); }
 .ring span{ width:42px; height:42px; border-radius:50%; background:var(--s1); display:grid; place-items:center;
   font-size:.78rem; font-weight:700; color:#fff; }
-.verdict p{ margin:0; font-size:.85rem; color:#C9CFE6; }
+.verdict p{ margin:0; font-size:.85rem; color:#E6EAF7; }
 .verdict strong{ color:#fff; }
 
 /* ---------- empty state ---------- */
@@ -126,6 +126,22 @@ details{ border-radius:12px !important; border-color:var(--bd) !important; backg
 [data-testid="stPills"] button, [data-testid="stSegmentedControl"] button{ border-radius:99px !important; }
 .st-key-nav [data-testid="stSegmentedControl"] button{ padding:.55rem 1.05rem; font-weight:600; font-size:.95rem; }
 .st-key-nav [data-testid="stSegmentedControl"]{ margin-bottom:.4rem; }
+/* ---------- keterbacaan teks bawaan streamlit di background gelap ---------- */
+:where(.stApp) :where(p, li, span, label, h1, h2, h3, h4, small, div),
+:where([data-testid="stMarkdownContainer"], [data-testid="stWidgetLabel"], [data-testid="stCheckbox"], [data-testid="stRadio"],
+  [data-testid="stToggle"], [data-testid="stSlider"], [data-testid="stSelectbox"], [data-testid="stExpander"] summary,
+  [data-testid="stChatMessage"], section[data-testid="stSidebar"]) :where(*){ color:var(--tx); }
+[data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] *, .stApp small,
+[data-testid="stMetricLabel"] *, [data-testid="stTooltipIcon"]{ color:var(--mut) !important; }
+.stTextInput input::placeholder, .stTextArea textarea::placeholder, [data-testid="stChatInput"] textarea::placeholder{ color:#9AA3C0 !important; opacity:1; }
+[data-testid="stChatInput"] textarea, [data-testid="stSelectbox"] div[data-baseweb="select"] *{ color:var(--tx) !important; }
+[data-testid="stSegmentedControl"] button, [data-testid="stPills"] button{ color:#E6EAF7 !important; }
+[data-testid="stSegmentedControl"] button[aria-checked="true"], [data-testid="stSegmentedControl"] button[aria-pressed="true"],
+[data-testid="stPills"] button[aria-checked="true"], [data-testid="stPills"] button[aria-pressed="true"]{ color:#fff !important; }
+[data-testid="stMetricValue"] *{ color:#fff !important; }
+a{ color:#FFB3B6; }
+[data-testid="stPills"] button[aria-checked="true"], [data-testid="stPills"] button[aria-pressed="true"],
+[data-testid="stSegmentedControl"] button[aria-checked="true"], [data-testid="stSegmentedControl"] button[aria-pressed="true"]{ background:#B3141A !important; border-color:#E5484D !important; }
 @media (max-width:760px){ .hero h1{font-size:1.65rem;} .rc-top{flex-direction:column;} .score{text-align:left; width:100%;} }
 </style>
 """
